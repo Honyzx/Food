@@ -1,0 +1,82 @@
+﻿@page "/"
+@using Microsoft.AspNetCore.Mvc;
+@using Microsoft.AspNetCore.Mvc.RazorPages;
+@using Microsoft.EntityFrameworkCore
+@using Models
+@rendermode InteractiveServer
+
+
+
+
+
+<input type="checkbox" title="Navigation menu" class="navbar-toggler"/>
+
+
+<header>
+    <div class="logo-search">
+        <div class="logo">ФудМод</div>
+        <input type="text" placeholder="Искать в ФудМоде">
+        <button>Войти</button>
+        <button><a href="http://localhost:5258/basket">Kорзина</a></button>
+        <button><a href="http://localhost:5258/">Mеню</a></button>
+        <button><a href="http://localhost:5258/order">Заказы</a></button>
+        <button><a href="http://localhost:5258/courier">Kурьер</a></button>
+    </div>
+</header>
+
+<main>
+    <h2>Меню</h2>
+    <section class="menu ">
+        <div class="item"><img src="https://cm.samokat.ru/processed/l/public/0a4874174cc04289_4607058033804.jpg" alt="Яйца"><p>Яйца 24шт<br>70р</p></div>
+        <div class="item"><img src="https://cm.samokat.ru/processed/l/product_card/b5b71a49-1b8f-4938-89e5-44d83ba3d89f.jpg" alt="Хлеб белый"><p>Хлеб белый<br>45р</p></div>
+        <div class="item"><img src="https://cm.samokat.ru/processed/l/product_card/97a01673-279c-4f9f-8fb1-74eecac5a32b.jpg" alt="Мороженое"><p>Мороженое<br>145р</p></div>
+        <div class="item"><img src="https://cm.samokat.ru/processed/l/product_card/be14a7ea-ed79-4521-a8b2-3ed3d71fa00a.jpg" alt="Креветки"><p>Креветки<br>450р/1 кг</p></div>
+        <div class="item"><img src="https://cm.samokat.ru/processed/l/product_card/ce87de48-1d5e-4c83-9358-0f3abf433271.jpg" alt="Сок Яблочный"><p>Сок J7 Яблочный<br>170р</p></div>
+        <div class="item"><img src="https://cm.samokat.ru/processed/l/public/b66d1229637ddd7b_4600494600487.jpg" alt="Липтон"><p>Липтон зеленый чай<br>150р</p></div>
+        <div class="item"><img src="https://cm.samokat.ru/processed/l/public/0d5400af3b0493b0_4670108940070.jpg" alt="Чизкейк малины"><p>Чизкейк малиновый<br>36р</p></div>
+        <div class="item"><img src="https://cm.samokat.ru/processed/l/product_card/1c46dc82-f164-4e41-99e4-e00a60e4e45e.jpg" alt="Зефир в шоколаде"><p>Зефир в шоколаде<br>187р</p></div>
+        <div class="item"><img src="https://cm.samokat.ru/processed/l/product_card/0f6d30fb-25b5-42d1-9c0c-135aa01653d0.jpg" alt="Каша"><p>Каша<br>90р</p></div>
+        <div class="item"><img src="https://cm.samokat.ru/processed/l/product_card/32d6c0cc-ee48-4b1d-9881-87765357e6ec.jpg" alt="Детское питание"><p>Детское питание ФруктоНяня<br>89р</p></div>
+    </section>
+
+    <h2>Акции</h2>
+    <section class="sales"> 
+        <div class="item"><img src="https://cm.samokat.ru/processed/l/product_card/aa7e7e5e-a585-4715-bc6d-6a8abc94d93b.jpg" alt="Моти"><p>Моти<br> <span>145р</span></p></div>
+        <div class="item"><img src="https://cm.samokat.ru/processed/l/product_card/a9729abe-18c1-4293-a565-629f269146bf.jpg" alt="Круассан"><p>Круассан<br><span>120р</span></p></div>
+        <div class="item"><img src="https://cm.samokat.ru/processed/l/product_card/9ccf7a50-e170-4018-af42-6332a9fdb387.jpg" alt="Бургер"><p>Бургер<br><span>150р</span></p></div>
+        <div class="item"><img src="https://cm.samokat.ru/processed/l/product_card/bc6b6cbe-234e-4717-b737-4837e51feeea.jpg" alt="Вафля"><p>Вафля<br><span>79р</span></p></div>
+    </section>
+
+    <h2>Магазины</h2>
+    <section class="stores item ">
+        <img src="https://static.tildacdn.com/tild6138-3932-4430-b865-353632643634/093049fd7ce9bec5c096.jpg" alt="Магнит">
+        <img src="https://avatars.mds.yandex.net/i?id=2de7377983afe39498e5d0e12bc3168c7169b987-12985844-images-thumbs&n=13" alt="Ашан">
+        <img src="https://avatars.mds.yandex.net/i?id=d392645d246ea85e6d2fdd18402692c1554cff20-5257302-images-thumbs&n=13" alt="Перекресток">
+        <img src="https://avatars.mds.yandex.net/i?id=4eb3c25b08bdace505c32a657517094937253cd3-5210240-images-thumbs&n=13" alt="Лента">
+        <img src="https://avatars.mds.yandex.net/i?id=7d3ed617002bd629a314ec47af3e1710c3d622a8-5888695-images-thumbs&n=13" alt="Пятерочка">
+        <img src="https://avatars.mds.yandex.net/get-mpic/1943683/img_id5721751435035874186.png/orig" alt="ВкусВилл">
+    </section>
+</main>
+<footer>
+    <section class="registration">
+        <form method="post" action="Register.aspx">
+            <h3>Регистрация / Вход</h3>
+            <input type="text" name="fio" placeholder="ФИО" required>
+            <input type="email" name="email" placeholder="E-mail" required>
+            <input type="tel" name="phone" placeholder="Номер телефона" required>
+            <button type="submit">Регистрация</button>
+        </form>
+        <div class="map">
+            <h3>Выберите ваше местоположение</h3>
+            <img src="#" alt="map">
+        </div>
+    </section>
+    <div class="contact">
+        <p>ФудМод@gmail.com</p>
+        <p>+7(985)017-49-38</p>
+    </div>
+</footer>
+
+@code {
+
+}

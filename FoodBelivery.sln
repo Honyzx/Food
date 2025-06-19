@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodBelivery", "FoodBelivery\FoodBelivery.csproj", "{866EED67-1B1B-43E0-AF71-8ADE4E47CBFF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{46969A31-D5B7-4F80-B724-BF51BC0A0EB0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataBase", "DataBase\DataBase.csproj", "{2E868117-9CB4-4AE5-BD25-C603E797323A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{866EED67-1B1B-43E0-AF71-8ADE4E47CBFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{866EED67-1B1B-43E0-AF71-8ADE4E47CBFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{866EED67-1B1B-43E0-AF71-8ADE4E47CBFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{866EED67-1B1B-43E0-AF71-8ADE4E47CBFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46969A31-D5B7-4F80-B724-BF51BC0A0EB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46969A31-D5B7-4F80-B724-BF51BC0A0EB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46969A31-D5B7-4F80-B724-BF51BC0A0EB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46969A31-D5B7-4F80-B724-BF51BC0A0EB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E868117-9CB4-4AE5-BD25-C603E797323A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E868117-9CB4-4AE5-BD25-C603E797323A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E868117-9CB4-4AE5-BD25-C603E797323A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E868117-9CB4-4AE5-BD25-C603E797323A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

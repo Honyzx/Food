@@ -1,0 +1,35 @@
+﻿
+@rendermode InteractiveServer
+@page "/basket"
+@using Microsoft.AspNetCore.Mvc
+@using Models
+
+<header>
+    <div class="logo-search">
+        <div class="logo">ФудМод</div>
+        <input type="text" placeholder="Искать в ФудМоде">
+        <button>Войти</button>
+        <button><a href="http://localhost:5258/basket">Kорзина</a></button>
+        <button><a href="http://localhost:5258/">Mеню</a></button>
+        <button><a href="http://localhost:5258/order">Заказы</a></button>
+        <button><a href="http://localhost:5258/courier">Kурьер</a></button>
+    </div>
+</header>
+<input type="checkbox" title="Navigation menu" class="navbar-toggler"/>
+
+
+<header>Корзина</header>
+    <link rel="stylesheet" href="">
+    
+<div class="container">
+    <div class="suh"> <img src ="https://avatars.mds.yandex.net/i?id=610cf7a9e87177e42104ae1d187fc789e46a75f7-10734598-images-thumbs&n=13" alt="пусто" /> </div>
+    <p class="empty-cart">В корзине пусто</p>
+    <p class="instruction">Выберите что-нибудь из магазинов, чтобы оформить заказ</p>
+    <a href="/" class="button tit">За покупками</a>
+</div>
+
+
+    @code {
+
+       
+    }
