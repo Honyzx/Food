@@ -1,6 +1,10 @@
+using Database;
 using FoodBelivery.Components;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<DbConnectionContext>();
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
@@ -24,5 +28,10 @@ app.UseAntiforgery();
 app.MapStaticAssets();
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode();
+using (var serviceScope = app.Services.CreateScope())
+{
+    var context = serviceScope.ServiceProvider.GetRequiredService<DbConnectionContext>(); 
+    context.Database.Migrate();
+}
 
 app.Run();

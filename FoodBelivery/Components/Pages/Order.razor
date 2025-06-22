@@ -1,6 +1,9 @@
 ﻿
 @page "/order"
+@using Database
+@using Models
 @rendermode InteractiveServer
+@inject DbConnectionContext  ef
 
 
 
@@ -20,14 +23,15 @@
 <div class="history">История заказов</div>
 
 
-
+<EditForm FormName="formAddItem" Model="_client" OnValidSubmit="@Submit">
+    <DataAnnotationsValidator></DataAnnotationsValidator>
 <div class="bottom">
     <div class="form">
         <h3>Регистрация / Вход</h3>
-        <input type="text" placeholder="ФИО">
-        <input type="email" placeholder="e-mail">
-        <input type="text" placeholder="номер телефона">
-        <button>Регистрация</button>
+        <input type="text" placeholder="ФИО" @bind="@_client.Name">
+        <input type="email" placeholder="e-mail" @bind="@_client.Email">
+        <input type="text" placeholder="номер телефона" @bind="@_client.PhoneNumber">
+        <button type="submit">Регистрация</button>
         <div class="contact">
             ФудМод@gmail.com<br>
             +7(905)017-49-38
@@ -39,7 +43,14 @@
     </div>
 </div>
 
-
+    </EditForm>
 @code {
+    private Client _client = new Client();
 
-}}
+    private void Submit(EditContext arg)
+    {
+        ef.Add(_client);
+        ef.SaveChanges();
+        _client = new Client();
+    }
+}
