@@ -1,9 +1,11 @@
 ﻿@page "/"
+@using Database
 @using Microsoft.AspNetCore.Mvc;
 @using Microsoft.AspNetCore.Mvc.RazorPages;
 @using Microsoft.EntityFrameworkCore
 @using Models
 @rendermode InteractiveServer
+@inject DbConnectionContext  ef
 
 
 
@@ -57,26 +59,34 @@
         <img src="https://avatars.mds.yandex.net/get-mpic/1943683/img_id5721751435035874186.png/orig" alt="ВкусВилл">
     </section>
 </main>
-<footer>
-    <section class="registration">
-        <form method="post" action="Register.aspx">
+<EditForm FormName="formAddItem" Model="_client" OnValidSubmit="@Submit">
+    <DataAnnotationsValidator></DataAnnotationsValidator>
+    <div class="bottom">
+        <div class="form">
             <h3>Регистрация / Вход</h3>
-            <input type="text" name="fio" placeholder="ФИО" required>
-            <input type="email" name="email" placeholder="E-mail" required>
-            <input type="tel" name="phone" placeholder="Номер телефона" required>
+            <input type="text" placeholder="ФИО" @bind="@_client.Name">
+            <input type="email" placeholder="e-mail" @bind="@_client.Email">
+            <input type="text" placeholder="номер телефона" @bind="@_client.PhoneNumber">
             <button type="submit">Регистрация</button>
-        </form>
+            <div class="contact">
+                ФудМод@gmail.com<br>
+                +7(905)017-49-38
+            </div>
+        </div>
         <div class="map">
             <h3>Выберите ваше местоположение</h3>
-            <img src="#" alt="map">
+            <img class="map" src="https://mapsshop.ru/data/pictures_tpl/GPS_karta_oblasci/31.jpg" alt="Карта">
         </div>
-    </section>
-    <div class="contact">
-        <p>ФудМод@gmail.com</p>
-        <p>+7(985)017-49-38</p>
     </div>
-</footer>
 
+</EditForm>
 @code {
+    private Client _client = new Client();
 
+    private void Submit(EditContext arg)
+    {
+        ef.Add(_client);
+        ef.SaveChanges();
+        _client = new Client();
+    }
 }
